@@ -1,0 +1,30 @@
+---
+import { Image } from "astro:assets";
+import logoImg from "../assets/ELMAYOR.jpg";
+
+const navItems = [
+  { label: "Solution", href: "" },
+  { label: "Who we help", href: "" },
+  { label: "Outcomes", href: "" },
+  { label: "Company", href: "" },
+];
+---
+
+<header>
+  <div class="container">
+    <a href="/">
+      <Image
+        src={logoImg}
+        alt="Company logo"
+        class="rounded-lg"
+        width={48}
+        height={48}
+      />
+      <span>El Mayor</span>
+    </a>
+    <nav>
+      {navItems.map((item) => <a href={item.href}>{item.label}</a>)}
+    </nav>
+    <a href="/#"> Contactanos </a>
+  </div>
+</header>
