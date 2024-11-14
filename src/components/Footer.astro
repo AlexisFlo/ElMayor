@@ -1,0 +1,57 @@
+---
+import { Image } from "astro:assets";
+import logoImg from "../assets/ELMAYOR.jpg";
+
+const footerLinks = [
+  {label: 'Home', href:'#'},
+  {label: 'Solution', href:'#'},
+  {label: 'Outcomes', href:'#'},
+  {label: 'Company', href:'#'},
+  {label: 'Resources', href:'#'},
+  {label: 'Contact us', href:'#'},
+]
+---
+
+<footer class="bg-gray-900 text-white py-12">
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+      <div>
+        <Image
+          src={logoImg}
+          alt="Company Logo"
+          class="rounded-lg"
+          width={48}
+          height={48}
+        />
+        <p class="font-serif font-bold pt-2 text-xl">El Mayor</p>
+        <p class="text-sm pt-2">Better outcomes with behavioral economics.</p>
+      </div>
+      <div>
+        <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+        <ul class="space-y-2">
+          {footerLinks.map((link) => (
+            <li>
+              <a href={link.href} class="text-sm hover:text-primary-300">{link.label}</a>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-lg font-semibold mb-4">Stay connected</h3>
+        <p>Subscribe to our newsletter for updates</p>
+        <form class="flex">
+          <input type="email" placeholder="Your email" class="flex-grow rounded-l-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-primary-500">
+          <button class="bg-primary-500 text-white px-4 py-2 rounded-r-md hover:bg-primary-600 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2">Suscribe</button>
+        </form>
+      </div>
+    </div>
+    <div class="border-t border-gray-700 pt-8 flex flex-cl md:flex-row justify-between items-center">
+      <p>&copy; 2024 El Mayor Inc. All rights reserved</p>
+      <div class="flex space-x-4">
+        <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white">
+          <span class="sr-only">X</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
